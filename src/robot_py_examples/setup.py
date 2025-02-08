@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'simple_publisher = robot_py_examples.simple_publisher:main',
+            'simple_subscriber = robot_py_examples.simple_subscriber: main',
         ],
     },
 )
