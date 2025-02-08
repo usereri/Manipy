@@ -1,0 +1,32 @@
+[2.500s] Invoking command in '/home/eri/robot_ws/src/robot_py_examples': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/eri/robot_ws/build/robot_py_examples/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/eri/robot_ws/install/robot_py_examples/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_py_examples build --build-base /home/eri/robot_ws/build/robot_py_examples/build install --record /home/eri/robot_ws/build/robot_py_examples/install.log --single-version-externally-managed install_data
+[3.119s] running egg_info
+[3.120s] creating ../../build/robot_py_examples/robot_py_examples.egg-info
+[3.166s] writing ../../build/robot_py_examples/robot_py_examples.egg-info/PKG-INFO
+[3.166s] writing dependency_links to ../../build/robot_py_examples/robot_py_examples.egg-info/dependency_links.txt
+[3.167s] writing requirements to ../../build/robot_py_examples/robot_py_examples.egg-info/requires.txt
+[3.167s] writing top-level names to ../../build/robot_py_examples/robot_py_examples.egg-info/top_level.txt
+[3.167s] writing manifest file '../../build/robot_py_examples/robot_py_examples.egg-info/SOURCES.txt'
+[3.264s] reading manifest file '../../build/robot_py_examples/robot_py_examples.egg-info/SOURCES.txt'
+[3.265s] writing manifest file '../../build/robot_py_examples/robot_py_examples.egg-info/SOURCES.txt'
+[3.266s] running build
+[3.266s] running build_py
+[3.266s] creating /home/eri/robot_ws/build/robot_py_examples/build
+[3.267s] creating /home/eri/robot_ws/build/robot_py_examples/build/lib
+[3.267s] creating /home/eri/robot_ws/build/robot_py_examples/build/lib/robot_py_examples
+[3.267s] copying robot_py_examples/__init__.py -> /home/eri/robot_ws/build/robot_py_examples/build/lib/robot_py_examples
+[3.268s] running install
+[3.280s] running install_lib
+[3.330s] creating /home/eri/robot_ws/install/robot_py_examples/lib/python3.12/site-packages/robot_py_examples
+[3.330s] copying /home/eri/robot_ws/build/robot_py_examples/build/lib/robot_py_examples/__init__.py -> /home/eri/robot_ws/install/robot_py_examples/lib/python3.12/site-packages/robot_py_examples
+[3.331s] byte-compiling /home/eri/robot_ws/install/robot_py_examples/lib/python3.12/site-packages/robot_py_examples/__init__.py to __init__.cpython-312.pyc
+[3.332s] running install_data
+[3.332s] creating /home/eri/robot_ws/install/robot_py_examples/share/ament_index
+[3.333s] creating /home/eri/robot_ws/install/robot_py_examples/share/ament_index/resource_index
+[3.333s] creating /home/eri/robot_ws/install/robot_py_examples/share/ament_index/resource_index/packages
+[3.333s] copying resource/robot_py_examples -> /home/eri/robot_ws/install/robot_py_examples/share/ament_index/resource_index/packages
+[3.333s] copying package.xml -> /home/eri/robot_ws/install/robot_py_examples/share/robot_py_examples
+[3.334s] running install_egg_info
+[3.382s] Copying ../../build/robot_py_examples/robot_py_examples.egg-info to /home/eri/robot_ws/install/robot_py_examples/lib/python3.12/site-packages/robot_py_examples-0.0.0-py3.12.egg-info
+[3.384s] running install_scripts
+[3.699s] writing list of installed files to '/home/eri/robot_ws/build/robot_py_examples/install.log'
+[3.765s] Invoked command in '/home/eri/robot_ws/src/robot_py_examples' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/eri/robot_ws/build/robot_py_examples/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/eri/robot_ws/install/robot_py_examples/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_py_examples build --build-base /home/eri/robot_ws/build/robot_py_examples/build install --record /home/eri/robot_ws/build/robot_py_examples/install.log --single-version-externally-managed install_data
