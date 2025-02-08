@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
+
+    <xacro:property name="PI" value="3.14159"/>
+    <xacro:property name="VELOCITY" value="10.0"/>
+    <xacro:property name="EFFORT" value="30.0"/>
+    <xacro:property name="FILE_PATH" value="file://$(find robot_description)/meshes"/>
+    <!-- Links -->
+    <link name="world"/>
+
+    <link name="base_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="-0.5 -0.5 0"/>
+            <geometry>
+                <mesh filename="${FILE_PATH}/basement.STL" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <link name="base_plate">
+        <visual>
+            <origin rpy="0 0 0" xyz="-0.39 -0.39 -0.56"/>
+            <geometry>
+                <mesh filename="${FILE_PATH}/base_plate.STL" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </visual>
+    </link>
+   
+    <!-- Joints -->  
+    <joint name="virtual_joint" type="fixed">
+        <parent link="world"/>
+        <child link="base_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint> 
+
+    <joint name="joint_1" type="revolute">
+        <parent link="base_link"/>
+        <child link="base_plate"/>
+        <axis xyz="0 0 1"/>
+        <origin xyz="0 0 0.307" rpy="0 0 0"/>
+        <limit lower="-${PI/2}" upper="${PI/2}" effort="${EFFORT}" velocity="${VELOCITY}"/>
+    </joint>
+</robot>
