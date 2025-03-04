@@ -30,7 +30,13 @@ def generate_launch_description():
         package="rviz2",
         executable="rviz2",
         name="rviz2",
-        output="screen"
-
+        output="screen",
+        arguments=["-d", os.path.join(get_package_share_directory("robot_description"), "rviz", "display.rviz")]
     )
-    return LaunchDescription([])
+
+    return LaunchDescription([
+        model_arg,
+        robot_state_publisher,
+        joint_state_publisher_gui,
+        rviz_node
+    ])
