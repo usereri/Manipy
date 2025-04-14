@@ -24,10 +24,10 @@ def generate_launch_description():
     robot_description = ParameterValue(
         Command([
             "xacro ", 
-            LaunchConfiguration("model")],
+            LaunchConfiguration("model")]),
               value_type=str
             )
-        )
+        
     
     gazebo_resource_path = SetEnvironmentVariable(
         name="GZ_SIM_RESOURCE_PATH",
@@ -66,7 +66,7 @@ def generate_launch_description():
 
     gz_ros2_bridge = Node(
         package="ros_gz_bridge",
-        executable="parameter_bride",
+        executable="parameter_bridge",
         arguments=[
             "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock]"
         ]
