@@ -15,6 +15,12 @@
                 <mesh filename="${FILE_PATH}/basement.STL" scale="0.01 0.01 0.01"/>
             </geometry>
         </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="-0.5 -0.5 0"/>
+            <geometry>
+                <mesh filename="${FILE_PATH}/basement.STL" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </collision>
     </link>
 
     <link name="base_plate">
@@ -24,6 +30,12 @@
                 <mesh filename="${FILE_PATH}/base_plate.STL" scale="0.01 0.01 0.01"/>
             </geometry>
         </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="-0.39 -0.39 -0.56"/>
+            <geometry>
+                <mesh filename="${FILE_PATH}/base_plate.STL" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </collision>
     </link>
    
     <!-- Joints -->  
@@ -48,6 +60,12 @@
                 <mesh filename="${FILE_PATH}/forward_drive_arm.STL" scale="0.01 0.01 0.01"/>
             </geometry>    
         </visual>
+        <collision>
+            <origin rpy="0 -${PI/2} ${PI/2}" xyz="0.19 0.06 -0.08"/>
+            <geometry>
+                <mesh filename="${FILE_PATH}/forward_drive_arm.STL" scale="0.01 0.01 0.01"/>
+            </geometry> 
+        </collision>
     </link>
 
     <joint name="joint_2" type="revolute">
@@ -65,6 +83,12 @@
                 <mesh filename="${FILE_PATH}/horizontal_arm.STL" scale="0.01 0.01 0.01"/>
             </geometry>
         </visual>
+        <collision>
+            <origin rpy="${PI/2} 0 ${PI/2}" xyz="-0.03 -0.4 -0.06"/>
+            <geometry>
+                <mesh filename="${FILE_PATH}/horizontal_arm.STL" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </collision>
     </link>
 
     <joint name="joint_3" type="revolute">
@@ -82,6 +106,12 @@
                 <mesh filename="${FILE_PATH}/claw_support.STL" scale="0.01 0.01 0.01"/>
             </geometry>
         </visual>
+        <collision>
+            <origin rpy="0 0 ${PI/2}" xyz="0 -0.05 -0.15"/>
+            <geometry>
+                <mesh filename="${FILE_PATH}/claw_support.STL" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </collision>
     </link>
 
     <joint name="horizontal_arm_to_claw_support" type="fixed">
@@ -97,6 +127,12 @@
                 <mesh filename="${FILE_PATH}/right_finger.STL" scale="0.01 0.01 0.01"/>
             </geometry>
         </visual>
+        <collision>
+             <origin rpy="0 0 -${PI/2}" xyz="-0.1 0.5 -0.1"/>
+            <geometry>
+                <mesh filename="${FILE_PATH}/right_finger.STL" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </collision>
     </link>
 
     <link name="gripper_left">
@@ -106,6 +142,12 @@
                 <mesh filename="${FILE_PATH}/left_finger.STL" scale="0.01 0.01 0.01"/>
             </geometry>
         </visual>
+        <collision>
+            <origin rpy="0 0 -${PI/2}" xyz="-0.04 0.5 -0.1"/>
+            <geometry>
+                <mesh filename="${FILE_PATH}/left_finger.STL" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </collision>
     </link>
 
     <joint name="joint_4" type="revolute">
