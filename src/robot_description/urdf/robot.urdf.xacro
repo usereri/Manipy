@@ -128,6 +128,22 @@
             </geometry>
         </collision>
     </link>
+
+    <link name="rgb_camera">
+        <xacro:default_inertia mass="0.001"/>
+        <visual>
+            <origin rpy="-${PI/2} 0 -${PI/2}" xyz="-0.1 0.13 0.13"/>
+            <geometry>
+                <mesh filename="${FILE_PATH}/pi_camera.STL" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="-${PI/2} 0 -${PI/2}" xyz="-0.1 0.13 0.13"/>
+            <geometry>
+                <mesh filename="${FILE_PATH}/pi_camera.STL" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </collision>
+    </link>
    
     <!-- Joints -->  
     <joint name="virtual_joint" type="fixed">
@@ -135,6 +151,12 @@
         <child link="base_link"/>
         <origin xyz="0 0 0" rpy="0 0 0"/>
     </joint> 
+
+    <joint name="rgb_camera_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="rgb_camera"/>
+        <origin xyz="0 0.45 0.2" rpy="0 -${PI/6} 1.57"/>
+    </joint>
 
     <joint name="joint_1" type="revolute">
         <parent link="base_link"/>
@@ -182,4 +204,5 @@
         <mimic joint="joint_4" multiplier="-1"/>
         <limit lower="0.0" upper="${PI/2}" effort="${EFFORT}" velocity="${VELOCITY}"/>
     </joint>
+
 </robot>
