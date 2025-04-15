@@ -48,46 +48,23 @@
             </geometry>
         </collision>
     </link>
-   
-    <!-- Joints -->  
-    <joint name="virtual_joint" type="fixed">
-        <parent link="world"/>
-        <child link="base_link"/>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-    </joint> 
-
-    <joint name="joint_1" type="revolute">
-        <parent link="base_link"/>
-        <child link="base_plate"/>
-        <axis xyz="0 0 1"/>
-        <origin xyz="0 0 0.307" rpy="0 0 0"/>
-        <limit lower="-${PI/2}" upper="${PI/2}" effort="${EFFORT}" velocity="${VELOCITY}"/>
-    </joint>
 
     <link name="forward_drive_arm">
-    <xacro:default_inertial mass="0.1"/>
-        <visual>
-            <origin rpy="0 -${PI/2} ${PI/2}" xyz="0.19 0.06 -0.08"/>
-            <geometry>
-                <mesh filename="${FILE_PATH}/forward_drive_arm.STL" scale="0.01 0.01 0.01"/>
-            </geometry>    
-        </visual>
-        <collision>
-            <origin rpy="0 -${PI/2} ${PI/2}" xyz="0.19 0.06 -0.08"/>
-            <geometry>
-                <mesh filename="${FILE_PATH}/forward_drive_arm.STL" scale="0.01 0.01 0.01"/>
-            </geometry> 
-        </collision>
+        <xacro:default_inertial mass="0.1"/>
+            <visual>
+                <origin rpy="0 -${PI/2} ${PI/2}" xyz="0.19 0.06 -0.08"/>
+                <geometry>
+                    <mesh filename="${FILE_PATH}/forward_drive_arm.STL" scale="0.01 0.01 0.01"/>
+                </geometry>    
+            </visual>
+            <collision>
+                <origin rpy="0 -${PI/2} ${PI/2}" xyz="0.19 0.06 -0.08"/>
+                <geometry>
+                    <mesh filename="${FILE_PATH}/forward_drive_arm.STL" scale="0.01 0.01 0.01"/>
+                </geometry> 
+            </collision>
     </link>
-
-    <joint name="joint_2" type="revolute">
-        <parent link="base_plate"/>
-        <child link="forward_drive_arm"/>
-        <axis xyz="1 0 0"/>
-        <origin xyz="-0.02 0 0.35" rpy="0 0 0"/>
-        <limit lower="-${PI/2}" upper="${PI/2}" effort="${EFFORT}" velocity="${VELOCITY}"/>
-    </joint>
-
+    
     <link name="horizontal_arm">
         <xacro:default_inertial mass="0.1"/>
         <visual>
@@ -104,14 +81,6 @@
         </collision>
     </link>
 
-    <joint name="joint_3" type="revolute">
-        <parent link="forward_drive_arm"/>
-        <child link="horizontal_arm"/>
-        <axis xyz="1 0 0"/>
-        <origin rpy="0 0 0" xyz="0 0 0.8"/>
-        <limit lower="-${PI/2}" upper="${PI/2}" effort="${EFFORT}" velocity="${VELOCITY}"/>
-    </joint>
-
     <link name="claw_support">
         <xacro:default_inertial mass="0.05"/>
         <visual>
@@ -127,12 +96,6 @@
             </geometry>
         </collision>
     </link>
-
-    <joint name="horizontal_arm_to_claw_support" type="fixed">
-        <parent link="horizontal_arm"/>
-        <child link="claw_support"/>
-        <origin rpy="0 0 0" xyz="0 0.82 0"/>
-    </joint>
 
     <link name="gripper_right">
         <xacro:default_inertial mass="0.01"/>
@@ -165,6 +128,43 @@
             </geometry>
         </collision>
     </link>
+   
+    <!-- Joints -->  
+    <joint name="virtual_joint" type="fixed">
+        <parent link="world"/>
+        <child link="base_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint> 
+
+    <joint name="joint_1" type="revolute">
+        <parent link="base_link"/>
+        <child link="base_plate"/>
+        <axis xyz="0 0 1"/>
+        <origin xyz="0 0 0.307" rpy="0 0 0"/>
+        <limit lower="-${PI/2}" upper="${PI/2}" effort="${EFFORT}" velocity="${VELOCITY}"/>
+    </joint>
+
+    <joint name="joint_2" type="revolute">
+        <parent link="base_plate"/>
+        <child link="forward_drive_arm"/>
+        <axis xyz="1 0 0"/>
+        <origin xyz="-0.02 0 0.35" rpy="0 0 0"/>
+        <limit lower="-${PI/2}" upper="${PI/2}" effort="${EFFORT}" velocity="${VELOCITY}"/>
+    </joint>
+
+    <joint name="joint_3" type="revolute">
+        <parent link="forward_drive_arm"/>
+        <child link="horizontal_arm"/>
+        <axis xyz="1 0 0"/>
+        <origin rpy="0 0 0" xyz="0 0 0.8"/>
+        <limit lower="-${PI/2}" upper="${PI/2}" effort="${EFFORT}" velocity="${VELOCITY}"/>
+    </joint>
+
+    <joint name="horizontal_arm_to_claw_support" type="fixed">
+        <parent link="horizontal_arm"/>
+        <child link="claw_support"/>
+        <origin rpy="0 0 0" xyz="0 0.82 0"/>
+    </joint>
 
     <joint name="joint_4" type="revolute">
         <parent link="claw_support"/>
