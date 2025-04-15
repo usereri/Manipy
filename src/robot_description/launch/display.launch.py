@@ -22,8 +22,9 @@ def generate_launch_description():
     )
 
     joint_state_publisher_gui = Node(
-        package="joint_state_publisher_gui",
-        executable="joint_state_publisher_gui",
+        package="joint_state_publisher",
+        executable="joint_state_publisher",
+        output="screen"
     )
 
     rviz_node = Node(
